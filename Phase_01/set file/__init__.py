@@ -513,14 +513,117 @@ print(output)"""
 # empty += [res]
 # print(empty)
 
-def fact_fun(num):
-    if num==0:
-        return 1
-    else:
-        return num *fact_fun(num-1)
-
-print(fact_fun(int(input('enter number : '))))
+# def fact_fun(num):
+#     if num==0:
+#         return 1
+#     else:
+#         return num *fact_fun(num-1)
+#
+# print(fact_fun(int(input('enter number : '))))
 
 # ls=[[1,2,3],[4,5,[6]],7,[8,9]]
 # emp=[]
 # for ele in ls:
+
+
+
+# '''online shopping '''
+# from abc import ABC,abstractmethod
+# class Item:
+#     def __init__(self,name,price):
+#         self.name =name
+#         self.price = price
+
+#     def get_price(self):
+#         return self.price
+
+# class Discount(ABC):
+#     @abstractmethod
+#     def apply_discount(self,total):
+#         pass
+
+# class Per_discount(Discount):
+#     def __init__(self,percentage):
+#         self.percentage=percentage
+
+#     def apply_discount(self,total):
+#         total_bal = total * (self.percentage / 100)
+#         return total_bal
+# class Fix_discount(Discount):
+#     def __init__(self,amount):
+#         self.amount = amount
+
+#     def apply_discount(self,total):
+#         return max(0,total - self.amount)
+
+# class Cart:
+#     def __init__(self):
+#         self.items = []
+#         self.discount =None
+
+#     def add_item(self,item):
+#         self.items.append(item)
+
+#     def set_discount(self,discount):
+#         self.discount = discount
+
+#     def calculate_total(self):
+#         new_bal = sum(each.get_price() for each in self.items)
+
+#         if self.discount:
+#             final_bal = self.discount.apply_discount(new_bal)
+#         else:
+#             final_bal = new_bal
+#         return final_bal
+
+# laptop = Item('laptop',30000)
+# phone = Item('phone',25000)
+# my_cart = Cart()
+
+# my_cart.add_item(laptop)
+# my_cart.add_item(phone)
+
+# my_thinking = Per_discount(10)
+# my_cart.set_discount(my_thinking)
+# print(f'${my_cart.calculate_total():.2f}')
+
+# my_fix = Fix_discount(100)
+# my_cart.set_discount(my_fix)
+# print(f'${my_cart.calculate_total():.2f}')
+
+
+
+s=input('enter string : ')
+res=''
+output=s
+for i in range(len(s)):
+    res = s[i]+res
+if s == res:
+    print('palin')
+else:
+    print('not palin')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

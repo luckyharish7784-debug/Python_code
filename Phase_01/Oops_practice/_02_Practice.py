@@ -23,6 +23,78 @@ Example Problem:
 •	Create a Student and a Faculty object, borrow and return books, and display how many books each user has.
 
 '''
+'''First code is correct '''
+class Book:
+    def __init__(self,title,author):
+        self.title = title
+        self.author = author
+
+    def display_info(self):
+        return (f'Book Name is {self.title} and Book author is {self.author}')
+
+class User:
+    def __init__(self,name,max_books):
+        self.name = name
+        self.max_book = max_books
+        self.borrowed=[]
+
+    def borrow_book(self,book):
+        self.borrowed.append(book)
+
+    def return_book(self,book):
+        if book in  self.borrowed:
+            self.borrowed.remove(book)
+            print(f'return book name {book.title}')
+
+    def display_borr_list(self):
+        print(f'{self.name} currently no.of books is {len(self.borrowed)}')
+
+class Student(User):
+    def __init__(self,name):
+        super().__init__(name,max_books = 3)
+
+
+    def Borrow_book(self,book):
+        if len(self.borrowed) < self.max_book:
+            super().borrow_book(book)
+        else:
+            print(f'Limit is completed : Student name {self.name} and Book limit {self.max_book}')
+
+class Faculty(User):
+    def __init__(self,name):
+        super().__init__(name,max_books=5)
+
+    def borrow_book(self,book):
+        if len(self.borrowed) < self.max_book:
+            super().borrow_book(book)
+        else:
+            print(f'Limit is completed : Faculty name {self.name} and Book limit is {self.max_book}')
+
+#create some books
+B1=Book('Python','VanRasum')
+B2=Book('Java',"Babu")
+B3=Book('SQL',"Hari")
+B4=Book('C',"Krish")
+B5=Book('SAP',"Rahul")
+B6=Book('DSA',"Siva")
+
+#Student
+student = Student('Ishi')
+student.borrow_book(B1)
+student.borrow_book(B2)
+student.borrow_book(B3)
+student.borrow_book(B4)
+student.display_borr_list()
+
+F = Faculty('RAVI')
+F.borrow_book(B1)
+F.borrow_book(B2)
+F.borrow_book(B3)
+F.borrow_book(B4)
+F.borrow_book(B5)
+# F.borrow_book(B6)
+F.return_book(B1)
+F.display_borr_list()
 
 # class Book:
 #     def __init__(self,title,author):
@@ -88,102 +160,102 @@ Example Problem:
 
 #==========================================================================================
 
-class Book:
-    def __init__(self,title,author):
-        self.title = title
-        self.author = author
-
-    def display_info(self):
-        print(f'Book title is {self.title} and author is  {self.author}')
-
-class User:
-    def __init__(self,name,max_books):
-        self.name = name
-        self.max_book = max_books
-        self.borrowed =[]
-        # self.count = 0
-
-    def return_book(self,book):
-        if book in self.borrowed :
-            self.borrowed.remove(book)
-            # self.count = self.count - 1
-            print(f'Book name is {book.title} and {self.max_book}')
-        else:
-            print('Book is Invalid')
-
-class Student(User):
-    def __init__(self,name):
-        super().__init__(name,max_books =3)
-
-    def borrow_book(self,book):
-        if len(self.borrowed) < self.max_book :
-            self.borrowed.append(book)
-            # self.count = self.count + 1
-            print(f'book name is {book.title}')
-        else:
-            print('Books limitation is completed')
-
-
-
-class Faculty(User):
-    def __init__(self,name):
-        super().__init__(name,max_books=5)
-
-    def borrow_book(self,book):
-        if len(self.borrowed) < self.max_book :
-            self.borrowed.append(book)
-            # self.count = self.count + 1
-            print (f'book name is {len(self.borrowed)}')
-        else:
-            print ('Books limitation is completed')
-
-
-
-# Create books
-b1 = Book("Python", "Guido")
-b2 = Book("Java", "James Gosling")
-
-# Create users
-student = Student("Haresh")
-faculty = Faculty("Dr. Smith")
-
-# Borrow books
-student.borrow_book(b1)
-student.borrow_book(b2)
-
-faculty.borrow_book(b1)
-
-# Return book
-student.return_book(b1)
-
-# Display borrowed count
-print("Student borrowed books:", len(student.borrowed))
-print("Faculty borrowed books:", len(faculty.borrowed))
-
-
-
-
-
-
-
-
-# b1=Book('Python','Vangasum')
-# b2=Book('Java','krish')
-# b3=Book('SQL','HEllo')
-# b4=Book('Python','Vangasum')
-# b5=Book('Java','Vangasum')
-# b6=Book('DE','superi')
-# # student = Student('Harish')
-# # student.borrow_book(b1)
-# # student.borrow_book(b2)
-# # student.borrow_book(b3)
-# # student.borrow_book(b4)
+# class Book:
+#     def __init__(self,title,author):
+#         self.title = title
+#         self.author = author
 #
-# faculty = Faculty('Ishi')
+#     def display_info(self):
+#         print(f'Book title is {self.title} and author is  {self.author}')
+#
+# class User:
+#     def __init__(self,name,max_books):
+#         self.name = name
+#         self.max_book = max_books
+#         self.borrowed =[]
+#         # self.count = 0
+#
+#     def return_book(self,book):
+#         if book in self.borrowed :
+#             self.borrowed.remove(book)
+#             # self.count = self.count - 1
+#             print(f'Book name is {book.title} and {self.max_book}')
+#         else:
+#             print('Book is Invalid')
+#
+# class Student(User):
+#     def __init__(self,name):
+#         super().__init__(name,max_books =3)
+#
+#     def borrow_book(self,book):
+#         if len(self.borrowed) < self.max_book :
+#             self.borrowed.append(book)
+#             # self.count = self.count + 1
+#             print(f'book name is {book.title}')
+#         else:
+#             print('Books limitation is completed')
+#
+#
+#
+# class Faculty(User):
+#     def __init__(self,name):
+#         super().__init__(name,max_books=5)
+#
+#     def borrow_book(self,book):
+#         if len(self.borrowed) < self.max_book :
+#             self.borrowed.append(book)
+#             # self.count = self.count + 1
+#             print (f'book name is {len(self.borrowed)}')
+#         else:
+#             print ('Books limitation is completed')
+#
+#
+#
+# # Create books
+# b1 = Book("Python", "Guido")
+# b2 = Book("Java", "James Gosling")
+#
+# # Create users
+# student = Student("Haresh")
+# faculty = Faculty("Dr. Smith")
+#
+# # Borrow books
+# student.borrow_book(b1)
+# student.borrow_book(b2)
+#
 # faculty.borrow_book(b1)
-# faculty.borrow_book(b2)
-# faculty.borrow_book(b3)
-# faculty.borrow_book(b4)
-# faculty.borrow_book(b5)
-# faculty.borrow_book(b6)
-
+#
+# # Return book
+# student.return_book(b1)
+#
+# # Display borrowed count
+# print("Student borrowed books:", len(student.borrowed))
+# print("Faculty borrowed books:", len(faculty.borrowed))
+#
+#
+#
+#
+#
+#
+#
+#
+# # b1=Book('Python','Vangasum')
+# # b2=Book('Java','krish')
+# # b3=Book('SQL','HEllo')
+# # b4=Book('Python','Vangasum')
+# # b5=Book('Java','Vangasum')
+# # b6=Book('DE','superi')
+# # # student = Student('Harish')
+# # # student.borrow_book(b1)
+# # # student.borrow_book(b2)
+# # # student.borrow_book(b3)
+# # # student.borrow_book(b4)
+# #
+# # faculty = Faculty('Ishi')
+# # faculty.borrow_book(b1)
+# # faculty.borrow_book(b2)
+# # faculty.borrow_book(b3)
+# # faculty.borrow_book(b4)
+# # faculty.borrow_book(b5)
+# # faculty.borrow_book(b6)
+#

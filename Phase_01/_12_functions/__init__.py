@@ -114,9 +114,126 @@ from itertools import count
 #         return (f"my name ,{each}!")
 # print(fun_name('hello'))
 
+'''add two numbers'''
+# m=lambda a,b : a + b
+# print(m(1,3))
+
+'''square number'''
+# sq=lambda x : x * x
+# print(sq(5))
+
+'''Check Even or Odd'''
+# num = lambda x : 'even'  if x%2==0 else 'odd'
+# print(num(int(input('enter number : '))))
+
+'''list inside element even or odd'''
+# ls=[2,4,7,5,6]
+# even = list(filter(lambda x : x%2 ==0 ,ls))
+# odd = list(filter(lambda x : x%2!=0,ls))
+#
+# print('even numbers : ',even)
+# print('odd numbers  : ', odd)
 
 
+''' Sort List of Tuples by Second Value'''
+ls = [(1,3),(1,2),(2,2)]
 
+'''armstrong'''
+# def arm_str(num,res):
+#     l=len(str(num))
+#     dup=num
+#     while num>0:
+#         digit = num%10
+#         res += digit**l
+#         num//=10
+#
+#     if res == dup:
+#         return 'Armstrong'
+#     return 'not Armstrong'
+#
+# num=int(input('enter number : '))
+# res=0
+# print(arm_str(num,res))
+
+'''palindrome string'''
+# def pali_str(s):
+#     res=''
+#     for char in s:
+#         res = char + res
+#     return res
+# print(pali_str(input('enter string : ')))
+
+
+# ls=['amma','hello' ,'ini','super']
+
+# def pali_lst(ls):
+#     emp=[]
+#     for each in ls:
+#         res=''
+#         for char in each:
+#             res = char + res
+#         if each == res:
+#             emp.append(res)
+#     return emp
+# ls=['amma','hello' ,'ini','super']
+# print(pali_lst(ls))
+
+
+# def pali_str(ls):
+#     emp=[]
+#     for each in ls:
+#         if each == each[::-1]:
+#             emp.append(each)
+#     return emp
+# ls=['amma','hello' ,'ini','super']
+# print(pali_str(ls))
+
+# def prime_ls(ls):
+#     emp=[]
+#     for each in ls:
+#         count = 0
+#         for ele in range(1,each+1):
+#             if each%ele ==0:
+#                 count+=1
+#         if count == 2:
+#             emp.append(each)
+#     return emp
+#
+# ls=[23,2,51,73,6,56]
+# print(prime_ls(ls))
+
+# def coprime_ls(ls):
+#     emp=[]
+#     for each in ls:
+#         count=0
+#         for ele in range(1,each+1):
+#             if each%ele==0:
+#                 count +=1
+#
+#         if count >2:
+#             emp.append(each)
+#     return emp
+#
+# ls=[2,15,3,67,45,7,8]
+# print(coprime_ls(ls))
+
+'''prime number'''
+# def fun_prime(num):
+#     count=0
+#     for ele in range(1,num+1):
+#         if num%ele == 0:
+#             count+=1
+#     if count==2:
+#         return 'prime'
+#     return 'not prime'
+# print(fun_prime((8)))
+
+def fact_num(num):
+    fact = 1
+    if num !=0:
+        fact = num * fact_num(num -1)
+    return fact
+print(fact_num(5))
 
 
 

@@ -278,7 +278,7 @@ from itertools import count
 
 
 
-# n=13
+# n=int(input('enter number : '))
 # count=0
 # for i in range(1,n+1):
 #     if n%i==0:
@@ -365,7 +365,8 @@ from itertools import count
 
 
 # x=[1,2,3]
-# x.append()
+# m=x.append(6)
+# print(m)
 # print(x)
 #
 # m=lst.insert(1, 15)
@@ -375,15 +376,19 @@ from itertools import count
 # print(lst)
 
 lst = [10, 20, 30,20]
-# lst.extend(10)
-# lst.extend('adp')
+# # lst.extend(10)
+# # lst.extend('adp')
 # lst.extend("{'a':10,'b':20}")
 # print(lst)
 # lst.pop(1)
 # lst.remove(20)
-x=lst.remove(20)
+# x=lst.remove(20)
 # print(lst)
-print(x)
+# print(x)
+
+# l=['gyuj','ttg5huj7j7j5yqq525y','bhrfrr','hcr5yhyhbe']
+# m=sorted(l,key=len)
+# print(m)
 
 
 

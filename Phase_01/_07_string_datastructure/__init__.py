@@ -112,11 +112,13 @@ print(ord('h')) -- value- 104
 print(chr(97)) -- character 'a' --- to converted integer to string
 
 '''
-# s = 'hello'
-# emp =''
-# for each in s:
-#     emp =emp+ chr(ord(each) - 32)
-# print(emp)
+s = 'hello'
+emp =''
+n1 = ''
+n2 = 90
+for each in s:
+    emp =emp+ chr(ord(each) - 32)
+print(emp)
 
 # ==============================================================================================
 

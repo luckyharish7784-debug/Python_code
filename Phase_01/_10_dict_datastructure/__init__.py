@@ -88,9 +88,9 @@ remaining - items, gets, setdefault, copy
 # d=['a','b','f']
 # m=dict.fromkeys(d)
 # print(m)
-d={'a','b','f'}
-m=dict.fromkeys(d,[8,9])
-print(m)
+# d={'a','b','f'}
+# m=dict.fromkeys(d,[8,9])
+# print(m)
 
 '''1.Count Characters 
 Problem: Count the frequency of each character in a string. 
@@ -337,7 +337,7 @@ Input: {'a':5, 'b':10, 'c':3}
 
 # d={'a':2,'b':3}
 # d1={'a':3,'c':4}
-#
+
 # output={}
 # for ele in d:
 #     output[ele]=d[ele]
@@ -390,7 +390,6 @@ Expected Output: {1: ['a'], 2: ['be'], 3: ['cat', 'bat', 'dog']}'''
 #     len_char=len(ele)
 #     if len_char not in output:
 #         output[len_char]=[]
-#         print(output)
 #     output[len_char].append(ele)
 # print(output)
 
@@ -628,7 +627,7 @@ Expected Output: {'banana':2}'''
 #
 # print(output)
 
-a = [10, 20, 30, 40, 50,90]
+# a = [10, 20, 30, 40, 50,90]
 #
 # # a.remove(10)
 # # print("After remove(30):", a)

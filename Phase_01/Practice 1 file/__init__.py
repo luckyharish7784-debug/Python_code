@@ -66,4 +66,35 @@ Expected Output: [('x',1), ('y',2)]'''
 #         if ls[j] > ls[j+1]:
 #             ls[j],ls[j+1] = ls[j+1],ls[j]
 # print(ls)
+# ===============================================================
+
+# old1 = {'x':{'a':1,'b':3,'x':4},'b':65,'c':45}
+# new1 = {'y':2,'f':{'x':4},'m':32}
+def swap_dict(old1):
+    d={}
+    for key,value in old1.items():
+        if isinstance(value,dict):
+            d[key]=swap_dict(value)
+        else:
+            d[value]=key
+    return d
+old1 = {'x':{'a':1,'b':3,'x':4},'b':65,'c':45}
+# new1=swap_dict(old1)
+print(swap_dict(old1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
